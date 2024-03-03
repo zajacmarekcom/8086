@@ -1,8 +1,10 @@
-﻿namespace Emu8086.Core;
+﻿using System.Collections.ObjectModel;
+
+namespace Emu8086.Core;
 
 public class Memory
 {
-    private ushort[] _memory;
+    private readonly ushort[] _memory;
     
     public Memory(int size)
     {
