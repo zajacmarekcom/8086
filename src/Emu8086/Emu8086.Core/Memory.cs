@@ -13,7 +13,7 @@ public class Memory
 
     public Memory()
     {
-        _memory = new ushort[0x10000];
+        _memory = new ushort[0xFFFFF];
     }
     
     public ushort this[ushort address]
