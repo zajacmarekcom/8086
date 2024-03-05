@@ -1,21 +1,20 @@
-﻿namespace Emu8086.Core;
+﻿using Emu8086.Core.Interfaces;
 
-public class Biu
+namespace Emu8086.Core;
+
+public class Biu(Memory memory, SegmentRegisters segmentRegisters) : IBiu
 {
-    private readonly Memory _memory;
-
-    public Biu(Memory memory)
+    public ushort Read(IMemoryAddress address)
     {
-        _memory = memory;
+        var high = memory[address.Address];
+        var low = memory[address.Address+1];
+        
+        return (ushort)((high << 8) | low);
     }
 
-    public ushort Read(ushort address)
+    public void Write(IMemoryAddress address, ushort value)
     {
-        return _memory[address];
-    }
-
-    public void Write(ushort address, ushort value)
-    {
-        _memory[address] = value;
+        memory[address.Address] = (byte)(value >> 8);
+        memory[address.Address+1] = (byte)value;
     }
 }
