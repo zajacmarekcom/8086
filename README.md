@@ -20,6 +20,12 @@ The first target of the implementation is to have foundation with covered:
 
 I skip the problem of counting clock ticks for each opcode. I assume that each opcode requires one tick of clock. It'll allow build mechnism to run code step-by-step in simple way.
 
+# Architecture
+
+## Components
+
+![](8086emu.png)
+
 # Contact
 
 If you want to contact me, send a message to this e-mail address:
