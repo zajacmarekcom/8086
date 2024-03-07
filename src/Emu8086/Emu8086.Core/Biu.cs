@@ -1,4 +1,5 @@
 ﻿using Emu8086.Core.Interfaces;
+using Emu8086.Core.Opcodes;
 
 namespace Emu8086.Core;
 
@@ -16,5 +17,10 @@ public class Biu(Memory memory, SegmentRegisters segmentRegisters) : IBiu
     {
         memory[address.Address] = (byte)(value >> 8);
         memory[address.Address+1] = (byte)value;
+    }
+
+    public Instruction NextInstruction()
+    {
+        throw new NotImplementedException();
     }
 }
