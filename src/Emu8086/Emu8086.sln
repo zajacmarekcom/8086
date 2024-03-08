@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emu8086.Core", "Emu8086.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emu8086.Core.Tests", "Emu8086.Core.Tests\Emu8086.Core.Tests.csproj", "{DB48B29C-E420-4150-905A-07C36304C186}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emu8086.Parser", "Emu8086.Parser\Emu8086.Parser.csproj", "{6A44D003-4C4A-438B-9139-0C8972F465EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emu8086.Parser.Tests", "Emu8086.Parser.Tests\Emu8086.Parser.Tests.csproj", "{C247062D-6825-48DC-8AEC-5F4675FDA2B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{DB48B29C-E420-4150-905A-07C36304C186}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB48B29C-E420-4150-905A-07C36304C186}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB48B29C-E420-4150-905A-07C36304C186}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A44D003-4C4A-438B-9139-0C8972F465EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A44D003-4C4A-438B-9139-0C8972F465EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A44D003-4C4A-438B-9139-0C8972F465EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A44D003-4C4A-438B-9139-0C8972F465EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C247062D-6825-48DC-8AEC-5F4675FDA2B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C247062D-6825-48DC-8AEC-5F4675FDA2B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C247062D-6825-48DC-8AEC-5F4675FDA2B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C247062D-6825-48DC-8AEC-5F4675FDA2B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
