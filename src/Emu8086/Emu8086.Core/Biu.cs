@@ -14,18 +14,35 @@ public class Biu(Memory memory, SegmentRegisters segmentRegisters) : IBiu
         return (ushort)((high << 8) | low);
     }
 
+    public byte ReadByte(IMemoryAddress address)
+    {
+        return memory[address.Address];
+    }
+
     public void Write(IMemoryAddress address, ushort value)
     {
         memory[address.Address] = (byte)(value >> 8);
         memory[address.Address + 1] = (byte)value;
     }
 
+    public void WriteByte(IMemoryAddress address, byte value)
+    {
+        memory[address.Address] = value;
+    }
+
     public Instruction NextInstruction()
     {
-        var firstByte = Read(new CombinedAddress(segmentRegisters.CS, segmentRegisters.IP));
-        var opcodeInfo = OpcodeMap.Map[(ushort)(firstByte >> 8)];
-        segmentRegisters.IP += 2;
-        var instruction = new Instruction(opcodeInfo.Opcode);
+        var firstByte = ReadByte(new CombinedAddress(segmentRegisters.CS, segmentRegisters.IP));
+        var opcodeInfo = OpcodeMap.Map[(byte)(firstByte >> 8)];
+        segmentRegisters.IP += 1;
+        var bytes = new List<byte>(6);
+        bytes.Add(firstByte);
+        for (int i = 0; i < opcodeInfo.Length-1; i++)
+        {
+            bytes.Add(ReadByte(new CombinedAddress(segmentRegisters.CS, segmentRegisters.IP)));
+            segmentRegisters.IP += 1;
+        }
+        var instruction = new Instruction(bytes.ToArray());
         return instruction;
     }
 }

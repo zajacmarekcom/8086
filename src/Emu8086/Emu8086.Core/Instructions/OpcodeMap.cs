@@ -2,7 +2,7 @@
 
 public static class OpcodeMap
 {
-    public static IDictionary<ushort, OpcodeInfo> Map = new Dictionary<ushort, OpcodeInfo>()
+    public static IDictionary<byte, OpcodeInfo> Map = new Dictionary<byte, OpcodeInfo>()
     {
         { 0x00, new(Opcodes.Add, 3) },
         { 0x01, new(Opcodes.Add, 3)},
