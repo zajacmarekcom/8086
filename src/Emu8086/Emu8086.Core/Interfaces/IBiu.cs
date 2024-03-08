@@ -1,4 +1,4 @@
-﻿using Emu8086.Core.Opcodes;
+﻿using Emu8086.Core.Instructions;
 
 namespace Emu8086.Core.Interfaces;
 

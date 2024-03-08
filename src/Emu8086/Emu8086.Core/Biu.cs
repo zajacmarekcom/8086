@@ -1,5 +1,5 @@
-﻿using Emu8086.Core.Interfaces;
-using Emu8086.Core.Opcodes;
+﻿using Emu8086.Core.Instructions;
+using Emu8086.Core.Interfaces;
 
 namespace Emu8086.Core;
 

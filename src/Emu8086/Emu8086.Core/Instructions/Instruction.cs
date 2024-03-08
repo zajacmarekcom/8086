@@ -1,4 +1,4 @@
-namespace Emu8086.Core.Opcodes;
+namespace Emu8086.Core.Instructions;
 
 public abstract class Instruction
 {
