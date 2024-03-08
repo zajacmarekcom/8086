@@ -1,9 +1,8 @@
 namespace Emu8086.Core.Instructions;
 
-public abstract class Instruction
+public class Instruction(Opcodes opcode)
 {
     private byte[] _set = new byte[6];
-    public Opcodes Opcode { get; }
-    
-    
+
+    public Opcodes Opcode { get; } = opcode;
 }

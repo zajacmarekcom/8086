@@ -141,7 +141,7 @@ public static class OpcodeMap
         { 0x86, new(Opcodes.Add, 3)},
         { 0x87, new(Opcodes.Add, 3)},
         { 0x88, new(Opcodes.Add, 3)},
-        { 0x89, new(Opcodes.Add, 3)},
+        { 0x89, new(Opcodes.Mov, 3)},
         { 0x8A, new(Opcodes.Add, 3)},
         { 0x8B, new(Opcodes.Add, 3)},
         { 0x8C, new(Opcodes.Add, 3)},

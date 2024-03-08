@@ -2,7 +2,7 @@
 
 namespace Emu8086.Core.MemoryAddresses;
 
-public class DirectAddressing(ushort address) : IMemoryAddress
+public class DirectAddress(ushort address) : IMemoryAddress
 {
     public uint Address => address;
 }
