@@ -13,6 +13,10 @@ public class AssemblerParser : IAssemblerParser
         while (codeStream.Position < codeStream.Length)
         {
             var line = GetNextLine(codeStream);
+            if (line is null)
+            {
+                break;
+            }
             var instruction = ParseInstruction(line);
             bytes.AddRange(instruction);
         }
@@ -37,6 +41,7 @@ public class AssemblerParser : IAssemblerParser
 
     private string? GetNextLine(MemoryStream stream)
     {
-        throw new NotImplementedException();
+        var reader = new StreamReader(stream);
+        return reader.ReadLine();
     }
 }
