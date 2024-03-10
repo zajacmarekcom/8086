@@ -8,5 +8,7 @@ public interface IBiu
     byte ReadByte(IMemoryAddress address);
     void Write(IMemoryAddress address, ushort value);
     void WriteByte(IMemoryAddress address, byte value);
+    void WriteWord(IMemoryAddress address, ushort value);
+    void WriteBytes(IMemoryAddress address, byte[] values);
     Instruction NextInstruction();
 }

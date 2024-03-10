@@ -26,7 +26,23 @@ public class AssemblerParser : IAssemblerParser
 
     private ReadOnlySpan<byte> ParseInstruction(string? line)
     {
-        throw new NotImplementedException();
+        if (line is null)
+        {
+            return Array.Empty<byte>();
+        }
+
+        var parts = line.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        var opcode = parts[0].ToUpperInvariant();
+        var operands = parts[1..];
+
+        var opcodeBytes = OpcodeMap.Map[opcode].Bytes;
+        var operandBytes = ParseOperands(operands);
+
+        var bytes = new List<byte>((int)(opcodeBytes.Length + operandBytes.Length));
+        bytes.AddRange(opcodeBytes);
+        bytes.AddRange(operandBytes);
+
+        return bytes.ToArray();
     }
 
     private MemoryStream GetStream(string code)

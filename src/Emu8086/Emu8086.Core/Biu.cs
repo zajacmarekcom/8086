@@ -30,18 +30,32 @@ public class Biu(Memory memory, SegmentRegisters segmentRegisters) : IBiu
         memory[address.Address] = value;
     }
 
+    public void WriteWord(IMemoryAddress address, ushort value)
+    {
+        memory[address.Address] = (byte)(value >> 8);
+        memory[address.Address + 1] = (byte)value;
+    }
+
+    public void WriteBytes(IMemoryAddress address, byte[] values)
+    {
+        for (int i = 0; i < values.Length; i++)
+        {
+            memory[(uint)(address.Address + i)] = values[i];
+        }
+    }
+
     public Instruction NextInstruction()
     {
         var firstByte = ReadByte(new CombinedAddress(segmentRegisters.CS, segmentRegisters.IP));
         var opcodeInfo = OpcodeMap.Map[(byte)(firstByte >> 8)];
         segmentRegisters.IP += 1;
-        var bytes = new List<byte>(6);
-        bytes.Add(firstByte);
-        for (int i = 0; i < opcodeInfo.Length-1; i++)
+        var bytes = new List<byte>(6) { firstByte };
+        for (int i = 0; i < opcodeInfo.Length - 1; i++)
         {
             bytes.Add(ReadByte(new CombinedAddress(segmentRegisters.CS, segmentRegisters.IP)));
             segmentRegisters.IP += 1;
         }
+
         var instruction = new Instruction(bytes.ToArray());
         return instruction;
     }
