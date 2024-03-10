@@ -26,6 +26,11 @@ I skip the problem of counting clock ticks for each opcode. I assume that each o
 
 ![](8086emu.png)
 
+### Useful links
+
+- [https://codegolf.stackexchange.com/questions/4732/emulate-an-intel-8086-cpu](https://codegolf.stackexchange.com/questions/4732/emulate-an-intel-8086-cpu)
+- [https://forum.osdev.org/viewtopic.php?f=13&t=40296](https://forum.osdev.org/viewtopic.php?f=13&t=40296)
+
 # Contact
 
 If you want to contact me, send a message to this e-mail address:
