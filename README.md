@@ -30,6 +30,9 @@ I skip the problem of counting clock ticks for each opcode. I assume that each o
 
 - [https://codegolf.stackexchange.com/questions/4732/emulate-an-intel-8086-cpu](https://codegolf.stackexchange.com/questions/4732/emulate-an-intel-8086-cpu)
 - [https://forum.osdev.org/viewtopic.php?f=13&t=40296](https://forum.osdev.org/viewtopic.php?f=13&t=40296)
+- [Instruction format](http://aturing.umcs.maine.edu/~meadow/courses/cos335/8086-instformat.pdf)
+- [Instruction format](https://mlgansari.files.wordpress.com/2020/04/3-instruction-set-of-8086-microprocessor.pdf)
+- [Opcodes](https://stackoverflow.com/questions/76331878/why-does-the-opcode-for-mov-from-a-segment-register-not-have-its-low-bit-set-it)
 
 # Contact
 

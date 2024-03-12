@@ -1,6 +1,6 @@
 ﻿namespace Emu8086.Core;
 
-public class Registers
+public class GeneralRegisters
 {
     public ushort AX { get; set; }
     public short AL

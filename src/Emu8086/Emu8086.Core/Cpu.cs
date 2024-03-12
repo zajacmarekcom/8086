@@ -2,7 +2,7 @@
 
 public class Cpu
 {
-    private readonly Registers _generalRegisters;
+    private readonly GeneralRegisters _generalGeneralRegisters;
     private readonly FlagRegister _flagRegister;
     private readonly SegmentRegisters _segmentRegisters;
     private readonly Biu _biu;

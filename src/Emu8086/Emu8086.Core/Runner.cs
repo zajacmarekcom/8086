@@ -6,7 +6,7 @@ namespace Emu8086.Core;
 public class Runner(
     IBiu biu,
     FlagRegister flagRegister,
-    Registers registers,
+    GeneralRegisters generalRegisters,
     IInstructionHandlerFactory instructionHandlerFactory)
 {
     public void Run()
