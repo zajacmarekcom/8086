@@ -45,6 +45,11 @@ public class AssemblerParser : IAssemblerParser
         return bytes.ToArray();
     }
 
+    private IEnumerable<byte> ParseOperands(string[] operands)
+    {
+        throw new NotImplementedException();
+    }
+
     private MemoryStream GetStream(string code)
     {
         var stream = new MemoryStream();
