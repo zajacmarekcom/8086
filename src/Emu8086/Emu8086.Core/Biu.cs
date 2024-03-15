@@ -47,7 +47,7 @@ public class Biu(Memory memory, SegmentRegisters segmentRegisters) : IBiu
     public Instruction NextInstruction()
     {
         var firstByte = ReadByte(new CombinedAddress(segmentRegisters.CS, segmentRegisters.IP));
-        var opcodeInfo = OpcodeMap.Map[(byte)(firstByte >> 8)];
+        var opcodeInfo = ByteToOpcodeMap.Map[(byte)(firstByte >> 8)];
         segmentRegisters.IP += 1;
         var bytes = new List<byte>(6) { firstByte };
         for (int i = 0; i < opcodeInfo.Length - 1; i++)

@@ -1,10 +1,10 @@
 ﻿namespace Emu8086.Core.Instructions;
 
-public static class OpcodeMap
+public static class ByteToOpcodeMap
 {
     public static IDictionary<byte, OpcodeInfo> Map = new Dictionary<byte, OpcodeInfo>()
     {
-        { 0x00, new(Opcodes.Add, 3) },
+        { 0x00, new(Opcodes.Add, 3)},
         { 0x01, new(Opcodes.Add, 3)},
         { 0x02, new(Opcodes.Add, 3)},
         { 0x03, new(Opcodes.Add, 3)},
