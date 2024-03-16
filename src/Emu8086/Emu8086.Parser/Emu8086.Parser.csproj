@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Emu8086.Core\Emu8086.Core.csproj" />
+    </ItemGroup>
+
 </Project>

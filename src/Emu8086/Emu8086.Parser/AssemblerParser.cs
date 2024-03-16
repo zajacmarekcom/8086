@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using Emu8086.Core.Instructions;
 
 namespace Emu8086.Parser;
 
@@ -35,7 +36,7 @@ public class AssemblerParser : IAssemblerParser
         var opcode = parts[0].ToUpperInvariant();
         var operands = parts[1..];
 
-        var opcodeBytes = OpcodeMap.Map[opcode].Bytes;
+        var opcodeBytes = OpcodeToBytesMap.Map[opcode].Bytes;
         var operandBytes = ParseOperands(operands);
 
         var bytes = new List<byte>((int)(opcodeBytes.Length + operandBytes.Length));
