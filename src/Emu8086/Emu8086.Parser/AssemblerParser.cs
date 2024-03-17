@@ -36,17 +36,17 @@ public class AssemblerParser : IAssemblerParser
         var opcode = parts[0].ToUpperInvariant();
         var operands = parts[1..];
 
-        var opcodeBytes = OpcodeToBytesMap.Map[opcode].Bytes;
+        var opcodeBytes = OpcodeToBytesMap.Map[opcode];
         var operandBytes = ParseOperands(operands);
 
-        var bytes = new List<byte>((int)(opcodeBytes.Length + operandBytes.Length));
-        bytes.AddRange(opcodeBytes);
+        var bytes = new List<byte>((opcodeBytes.Length + operandBytes.Length));
+        bytes.Add(opcodeBytes.OpcodeByte);
         bytes.AddRange(operandBytes);
 
         return bytes.ToArray();
     }
 
-    private IEnumerable<byte> ParseOperands(string[] operands)
+    private byte[] ParseOperands(string[] operands)
     {
         throw new NotImplementedException();
     }
