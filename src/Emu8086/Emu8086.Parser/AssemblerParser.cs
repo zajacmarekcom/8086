@@ -39,8 +39,7 @@ public class AssemblerParser : IAssemblerParser
         var opcodeBytes = OpcodeToBytesMap.Map[opcode];
         var operandBytes = ParseOperands(operands);
 
-        var bytes = new List<byte>((opcodeBytes.Length + operandBytes.Length));
-        bytes.Add(opcodeBytes.OpcodeByte);
+        var bytes = new List<byte>((opcodeBytes.Length + operandBytes.Length)) { opcodeBytes.OpcodeByte };
         bytes.AddRange(operandBytes);
 
         return bytes.ToArray();
