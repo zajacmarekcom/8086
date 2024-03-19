@@ -26,6 +26,10 @@ I skip the problem of counting clock ticks for each opcode. I assume that each o
 
 ![](8086emu.png)
 
+## Parser
+
+The idea behind parser is to take a lines of assembler code, identify the type of a instruction and put it into the memory, by BIU, to use it directly from the hex code.
+
 ### Useful links
 
 - [https://codegolf.stackexchange.com/questions/4732/emulate-an-intel-8086-cpu](https://codegolf.stackexchange.com/questions/4732/emulate-an-intel-8086-cpu)
