@@ -31,6 +31,11 @@ I skip the problem of counting clock ticks for each opcode. I assume that each o
 The plan assumes that the emulator allows use the full 1MB memory, by using Segments.
 Storing whole program in the memory opens posibility to implement full set of JMP instructions, what is not possible in implementations which don't store instructions under real addresses.
 
+### BIU
+
+The unit to be broker between memory and executive unit.
+It's responsible for managing segment registers.
+
 ## Parser
 
 The idea behind parser is to take a lines of assembler code, identify the type of a instruction and put it into the memory, by BIU, to use it directly from the hex code.
