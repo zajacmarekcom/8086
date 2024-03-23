@@ -1,9 +1,18 @@
-﻿namespace Emu8086.Core;
+﻿using Emu8086.Core.Interfaces;
 
-public class Cpu
+namespace Emu8086.Core;
+
+public class Cpu(
+    GeneralRegisters generalGeneralRegisters,
+    FlagRegister flagRegister,
+    SegmentRegisters segmentRegisters,
+    Biu biu,
+    IInstructionHandlerFactory instructionHandlerFactory)
 {
-    private readonly GeneralRegisters _generalGeneralRegisters;
-    private readonly FlagRegister _flagRegister;
-    private readonly SegmentRegisters _segmentRegisters;
-    private readonly Biu _biu;
+    public void Tick()
+    {
+        var instruction = biu.NextInstruction();
+        var handler = instructionHandlerFactory.GetHandler(instruction);
+        handler.HandleInstruction(instruction);
+    }
 }
