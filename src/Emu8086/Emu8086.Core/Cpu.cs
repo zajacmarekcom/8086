@@ -2,12 +2,7 @@
 
 namespace Emu8086.Core;
 
-public class Cpu(
-    GeneralRegisters generalGeneralRegisters,
-    FlagRegister flagRegister,
-    SegmentRegisters segmentRegisters,
-    Biu biu,
-    IInstructionHandlerFactory instructionHandlerFactory)
+public class Cpu(Biu biu, IInstructionHandlerFactory instructionHandlerFactory)
 {
     public void Tick()
     {
