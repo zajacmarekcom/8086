@@ -3,7 +3,8 @@ using Emu8086.Core.Interfaces;
 
 namespace Emu8086.Core.InstructionHandlers;
 
-public class CmpInstructionHandler : IInstructionHandler
+public class CmpInstructionHandler(IBiu biu, GeneralRegisters generalRegisters, FlagRegister flagRegister)
+    : IInstructionHandler
 {
     public void HandleInstruction(Instruction instruction)
     {

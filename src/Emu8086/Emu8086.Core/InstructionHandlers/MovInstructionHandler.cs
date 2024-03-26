@@ -3,7 +3,8 @@ using Emu8086.Core.Interfaces;
 
 namespace Emu8086.Core.InstructionHandlers;
 
-public class MovInstructionHandler : IInstructionHandler
+public class MovInstructionHandler(IBiu biu, GeneralRegisters generalRegisters, FlagRegister flagRegister)
+    : IInstructionHandler
 {
     public void HandleInstruction(Instruction instruction)
     {
